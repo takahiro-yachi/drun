@@ -51,6 +51,10 @@ int option_parser(int argc, char * argv[], option_t * opt)
 			return -1;
 		}
 	}
+	if (opt->cmd_params == 0) {
+		fprintf(stderr, "command must be set\n");
+		return -1;
+	}
 }
 
 static pid_t s_child;
