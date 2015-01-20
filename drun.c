@@ -87,6 +87,7 @@ static int supervisor(const option_t * opt)
 		if ((s_child = fork()) == 0) {
 			signal(SIGINT, SIG_DFL);
 			signal(SIGTERM, SIG_DFL);
+			signal(SIGHUP, SIG_DFL);
 			execvp(opt->cmd_param[0], opt->cmd_param);
 			fprintf(stderr, "error exec\n");
 			kill(getppid(), SIGTERM);
