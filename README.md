@@ -20,11 +20,11 @@ Run program as daemon
 ```
 
 ## SIGNALS
-If you set a --pid_file parameter, pid file contains a pid of supervisor process.  
+If you set --pid_file <file> option, drun recognize content of <file> as a pid of supervisor process.  
 Signal handling of supervisor process is as follows.
 ```
-SIGINT : stop program without restart
-SIGTERM : stop program without restart
-SIGHUP : relay signal
-SIGKILL : zombie
+SIGINT : Stop program without restart
+SIGTERM : Stop program without restart
+SIGHUP : Relay signal
+SIGKILL : Don't use !, Program will be a zombie
 ```
