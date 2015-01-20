@@ -20,7 +20,7 @@ Run program as daemon
 ```
 
 ## SIGNALS
-If you set --pid_file <file> option, drun recognize content of <file> as a pid of supervisor process.  
+If you set --pid_file &lt;file&gt; option, drun recognize content of <file> as a pid of supervisor process.  
 Signal handling of supervisor process is as follows.
 ```
 SIGINT : Stop program without restart
