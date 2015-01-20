@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <memory.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <signal.h>
 #include <sys/types.h> 
 #include <sys/wait.h>
@@ -31,6 +32,7 @@ void usage(const char * cmd)
 		"  %s --std_log /var/log/hoge/errlog --err_log /var/log/hoge/stdlog --pid_file /var/run/hoge.pid --retry 10 hoge param\n"
 		, cmd, cmd, cmd
 	);
+	exit(0);
 }
 
 int option_parser(int argc, char * argv[], option_t * opt)
