@@ -41,7 +41,8 @@ int option_parser(int argc, char * argv[], option_t * opt)
 	memset(opt, 0, sizeof(*opt));
 	for (i=1; i<argc; ++i) {
 #define CMP_AND_SET(key) (!strcmp(argv[i], "--"#key)) opt->key = argv[++i]
-		if (!strcmp(argv[i], "--help")) usage(argv[0]);
+		if (opt->cmd_params > 0) opt->cmd_param[opt->cmd_params++] = argv[i];
+		else if (!strcmp(argv[i], "--help")) usage(argv[0]);
 		else if CMP_AND_SET(std_log);
 		else if CMP_AND_SET(err_log);
 		else if CMP_AND_SET(pid_file);
