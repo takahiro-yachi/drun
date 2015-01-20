@@ -54,19 +54,24 @@ int option_parser(int argc, char * argv[], option_t * opt)
 }
 
 static pid_t s_child;
-void sig_term(int sig)
+static void sig_term(int sig)
 {
 	kill(s_child, sig);
 	s_child = 0;
 	signal(SIGINT, SIG_DFL);
 	signal(SIGTERM, SIG_DFL);
 }
+static void sig_hup(int sig)
+{
+	kill(s_child, sig);
+}
 
-int supervisor(const option_t * opt)
+static int supervisor(const option_t * opt)
 {
 	int retry = 1;
 	signal(SIGINT, sig_term);
 	signal(SIGTERM, sig_term);
+	signal(SIGHUP, sig_hup);
 	if (opt->retry) {
 		retry += atoi(opt->retry);
 	}
