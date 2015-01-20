@@ -8,10 +8,10 @@ Run program as daemon
 ```
 ## OPTIONS
 ```
-  --std_log: log file for stdout
-  --err_log: log file for stderr
-  --pid_file: pid file(supervisor pid)
-  --retry: PROGRAM restart limit
+  --std_log <file>: log file for stdout
+  --err_log <file>: log file for stderr
+  --pid_file <file>: pid file(supervisor pid)
+  --retry <integer>: PROGRAM restart limit
   --help: show this message and exit
 ```
 ## EXAMPLE
