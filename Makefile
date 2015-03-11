@@ -1,4 +1,6 @@
+CFLAGS+= -g
+CFLAGS+= -Wall
 all:
-	$(CC) -o drun *.c
+	$(CC) -o drun $(CFLAGS) *.c
 clean:
 	$(RM) drun
